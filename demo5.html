@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向绑定2</title>
+</head>
+<body>
+<div id="app">
+	<input type="text">
+	<button v-on:click="pushItem">添加一个元素</button>
+	<ol>
+		<li v-for="todo in todos">
+			{{todo.text}}
+		</li>
+	</ol>
+
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            todos: [
+                {text: "学习JS"},
+                {text: "学习Vue"}
+            ]
+        },
+        methods: {
+            pushItem: function () {
+
+                this.todos.push({text: '新项目'})
+            }
+        }
+    })
+</script>
+</html>
