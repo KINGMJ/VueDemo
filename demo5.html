@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-	<input type="text">
+	<input type="text" v-model="value">
 	<button v-on:click="pushItem">添加一个元素</button>
 	<ol>
 		<li v-for="todo in todos">
@@ -28,8 +28,7 @@
         },
         methods: {
             pushItem: function () {
-
-                this.todos.push({text: '新项目'})
+                this.todos.push({text: this.value})
             }
         }
     })
