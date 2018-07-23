@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>双向绑定 Tag:双向绑定（MVVM）</title>
+	<title>事件交互 Tag:数据绑定（data binding）</title>
 </head>
 <body>
 <div id="app">
 	<p>{{message}}</p>
-	<input type="text" v-model="message">
+	<button v-on:click="reverseMessage">逆转消息</button>
 </div>
 </body>
 <script src="vue.js"></script>
@@ -16,6 +16,11 @@
         el: '#app',
         data: {
             message: 'Hello World!'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
         }
     })
 </script>

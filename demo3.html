@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>事件交互 Tag:数据绑定（data binding）</title>
+    <meta charset="UTF-8">
+    <title>控制元素的显示</title>
 </head>
 <body>
 <div id="app">
-	<p>{{message}}</p>
-	<button v-on:click="reverseMessage">逆转消息</button>
+    <p v-if="seen">现在你看到我了</p>
 </div>
 </body>
 <script src="vue.js"></script>
@@ -15,12 +14,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'Hello World!'
-        },
-        methods: {
-            reverseMessage: function () {
-                this.message = this.message.split('').reverse().join('')
-            }
+            seen: false
         }
     })
 </script>

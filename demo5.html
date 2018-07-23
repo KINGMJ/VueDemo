@@ -2,18 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>双向绑定2</title>
+	<title>双向绑定 Tag:双向绑定（MVVM）</title>
 </head>
 <body>
 <div id="app">
-	<input type="text" v-model="value">
-	<button v-on:click="pushItem">添加一个元素</button>
-	<ol>
-		<li v-for="todo in todos">
-			{{todo.text}}
-		</li>
-	</ol>
-
+	<p>{{message}}</p>
+	<input type="text" v-model="message">
 </div>
 </body>
 <script src="vue.js"></script>
@@ -21,15 +15,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-            todos: [
-                {text: "学习JS"},
-                {text: "学习Vue"}
-            ]
-        },
-        methods: {
-            pushItem: function () {
-                this.todos.push({text: this.value})
-            }
+            message: 'Hello World!'
         }
     })
 </script>
